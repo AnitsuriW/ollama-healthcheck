@@ -2,7 +2,8 @@ package server
 
 import (
 	"context"
-	pb "ollama-healthcheck/proto"
+
+	pba "github.com/AnitsuriW/ollama-healthcheck/proto"
 )
 
 type HealthServer struct {

@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package health;
-option go_package = "ollama-healthcheck/proto";
+option go_package = "github.com/AnitsuriW/ollama-healthcheck/proto";
 
 service HealthService {
   rpc Check (HealthRequest) returns (HealthResponse);

@@ -5,8 +5,8 @@ import (
 	"net"
 	"net/http"
 
-	pb "ollama-healthcheck/proto"
-	"ollama-healthcheck/server"
+	pb "github.com/AnitsuriW/ollama-healthcheck/proto"
+	"github.com/AnitsuriW/ollama-healthcheck/server"
 
 	"google.golang.org/grpc"
 )
