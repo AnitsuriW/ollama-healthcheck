@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package health;
+option go_package = "ollama-healthcheck/proto";
+
+service HealthService {
+  rpc Check (HealthRequest) returns (HealthResponse);
+}
+
+message HealthRequest {}
+
+message HealthResponse {
+  bool healthy = 1;
+  string message = 2;
+}
