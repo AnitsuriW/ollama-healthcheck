@@ -11,4 +11,4 @@ require (
 	google.golang.org/protobuf v1.36.6 // indirect
 )
 
-replace ithub.com/AnitsuriW/failure-predictor/proto => ./proto
+replace github.com/AnitsuriW/failure-predictor/proto => ./proto

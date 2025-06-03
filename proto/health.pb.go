@@ -119,7 +119,7 @@ const file_proto_health_proto_rawDesc = "" +
 	"\ahealthy\x18\x01 \x01(\bR\ahealthy\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage2G\n" +
 	"\rHealthService\x126\n" +
-	"\x05Check\x12\x15.health.HealthRequest\x1a\x16.health.HealthResponseB/Z-github.com/AnitsuriW/ollama-healthcheck/protob\x06proto3"
+	"\x05Check\x12\x15.health.HealthRequest\x1a\x16.health.HealthResponseB5Z3github.com/AnitsuriW/ollama-healthcheck/proto;protob\x06proto3"
 
 var (
 	file_proto_health_proto_rawDescOnce sync.Once
