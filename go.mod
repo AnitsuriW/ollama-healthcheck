@@ -1,4 +1,4 @@
-module github.com/AnitsuriW/failure-predictor
+module github.com/AnitsuriW/ollama-healthcheck
 
 go 1.24.0
 
@@ -11,4 +11,4 @@ require (
 	google.golang.org/protobuf v1.36.6 // indirect
 )
 
-replace github.com/AnitsuriW/failure-predictor/proto => ./proto
+replace github.com/AnitsuriW/ollama-healthcheck/proto => ./proto
