@@ -15,6 +15,7 @@ func main() {
 	// 启动 RESTful 服务
 	go func() {
 		http.HandleFunc("/health", server.HealthHandler)
+		http.HandleFunc("/predict-failure", server.PredictFailureHandler)
 		log.Println("REST server listening on :8080")
 		log.Fatal(http.ListenAndServe(":8080", nil))
 	}()
