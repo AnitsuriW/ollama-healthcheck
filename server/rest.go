@@ -3,6 +3,7 @@ package server
 import (
 	"encoding/json"
 	"net/http"
+	"time"
 )
 
 type HealthResponse struct {
@@ -25,6 +26,10 @@ func CheckOllamaHealth() (bool, string) {
 
 func HealthHandler(w http.ResponseWriter, r *http.Request) {
 	healthy, msg := CheckOllamaHealth()
+	response := HealthResponse{
+		Healthy: healthy,
+		Message: msg + " | Timestamp: " + time.Now().Format(time.RFC3339),
+	}
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(HealthResponse{Healthy: healthy, Message: msg})
+	json.NewEncoder(w).Encode(response)
 }
