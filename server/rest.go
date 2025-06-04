@@ -7,8 +7,9 @@ import (
 )
 
 type HealthResponse struct {
-	Healthy bool   `json:"healthy"`
-	Message string `json:"message"`
+	Healthy   bool   `json:"healthy"`
+	Message   string `json:"message"`
+	Timestamp string `json:"timestamp"`
 }
 
 func CheckOllamaHealth() (bool, string) {
@@ -27,8 +28,9 @@ func CheckOllamaHealth() (bool, string) {
 func HealthHandler(w http.ResponseWriter, r *http.Request) {
 	healthy, msg := CheckOllamaHealth()
 	response := HealthResponse{
-		Healthy: healthy,
-		Message: msg + " | Timestamp: " + time.Now().Format(time.RFC3339),
+		Healthy:   healthy,
+		Message:   msg,
+		Timestamp: time.Now().Format(time.RFC3339),
 	}
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(response)
