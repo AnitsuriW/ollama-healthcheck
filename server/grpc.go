@@ -36,6 +36,6 @@ func (s *HealthServer) PredictFailure(ctx context.Context, req *pb.PredictReques
 
 	return &pb.PredictResponse{
 		Prediction: prediction,
-		Confidence: confidence,
+		Confidence: float32(confidence),
 	}, nil
 }
