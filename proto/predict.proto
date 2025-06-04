@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package proto;
+option go_package = "github.com/AnitsuriW/ollama-healthcheck/proto";
+
+message PredictRequest {
+	float cpu_usage = 1;
+	float memory_usage = 2;
+	int32 response_latency_ms = 3;
+	int32 errors_last_minute = 4;
+}
+
+message PredictResponse {
+	string prediction = 1;
+	float confidence = 2;
+}
+
+service PredictService {
+	rpc PredictFailure (PredictRequest) returns (PredictResponse);
+}
