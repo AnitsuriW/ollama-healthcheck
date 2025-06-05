@@ -25,6 +25,7 @@ type PredictRequest struct {
 type PredictResponse struct {
 	Prediction string  `json:"prediction"`
 	Confidence float64 `json:"confidence"`
+	Timestamp  string  `json:"timestamp"`
 }
 
 func CheckOllamaHealth() (bool, string) {
@@ -85,7 +86,9 @@ func PredictFailureHandler(w http.ResponseWriter, r *http.Request) {
 	response := PredictResponse{
 		Prediction: prediction,
 		Confidence: confidence,
+		Timestamp:  time.Now().Format(time.RFC3339),
 	}
+
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(response)
 }
