@@ -2,6 +2,7 @@ package server
 
 import (
 	"context"
+	"time"
 
 	pb "github.com/AnitsuriW/ollama-healthcheck/proto"
 )
@@ -37,5 +38,6 @@ func (s *HealthServer) PredictFailure(ctx context.Context, req *pb.PredictReques
 	return &pb.PredictResponse{
 		Prediction: prediction,
 		Confidence: float32(confidence),
+		Timestamp:  time.Now().Format(time.RFC3339),
 	}, nil
 }

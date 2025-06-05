@@ -93,6 +93,7 @@ type PredictResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Prediction    string                 `protobuf:"bytes,1,opt,name=prediction,proto3" json:"prediction,omitempty"`
 	Confidence    float32                `protobuf:"fixed32,2,opt,name=confidence,proto3" json:"confidence,omitempty"`
+	Timestamp     string                 `protobuf:"bytes,3,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -141,6 +142,13 @@ func (x *PredictResponse) GetConfidence() float32 {
 	return 0
 }
 
+func (x *PredictResponse) GetTimestamp() string {
+	if x != nil {
+		return x.Timestamp
+	}
+	return ""
+}
+
 var File_proto_predict_failure_proto protoreflect.FileDescriptor
 
 const file_proto_predict_failure_proto_rawDesc = "" +
@@ -150,14 +158,15 @@ const file_proto_predict_failure_proto_rawDesc = "" +
 	"\tcpu_usage\x18\x01 \x01(\x02R\bcpuUsage\x12!\n" +
 	"\fmemory_usage\x18\x02 \x01(\x02R\vmemoryUsage\x12.\n" +
 	"\x13response_latency_ms\x18\x03 \x01(\x05R\x11responseLatencyMs\x12,\n" +
-	"\x12errors_last_minute\x18\x04 \x01(\x05R\x10errorsLastMinute\"Q\n" +
+	"\x12errors_last_minute\x18\x04 \x01(\x05R\x10errorsLastMinute\"o\n" +
 	"\x0fPredictResponse\x12\x1e\n" +
 	"\n" +
 	"prediction\x18\x01 \x01(\tR\n" +
 	"prediction\x12\x1e\n" +
 	"\n" +
 	"confidence\x18\x02 \x01(\x02R\n" +
-	"confidence2X\n" +
+	"confidence\x12\x1c\n" +
+	"\ttimestamp\x18\x03 \x01(\tR\ttimestamp2X\n" +
 	"\x15PredictFailureService\x12?\n" +
 	"\x0ePredictFailure\x12\x15.proto.PredictRequest\x1a\x16.proto.PredictResponseB/Z-github.com/AnitsuriW/ollama-healthcheck/protob\x06proto3"
 

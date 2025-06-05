@@ -13,6 +13,7 @@ message PredictRequest {
 message PredictResponse {
 	string prediction = 1;
 	float confidence = 2;
+	string timestamp = 3;
 }
 
 service PredictFailureService {
